@@ -3,12 +3,13 @@
 import Fecha from './fecha.js';*/
 export default class Paciente{
     constructor (nombre,fecha,telefono){
-        this.nombre = nombre;
-        this.fecha = fecha;
-        this.telefono = telefono;
+        this._nombre = nombre;
+        this._fecha = fecha;
+        this._telefono = telefono;
     }
     getPerfil(){
-        return `${this.nombre.getNombreCompleto()}, ${this.fecha.getFecha()}, ${this.telefono}`;
+        var telefonoString= this._telefono.toString();
+        return `${this._nombre.getNombreCompleto()}, ${this._fecha.getFecha()}, ${telefonoString.slice(0,3)}-${telefonoString.slice(3,6)}-${telefonoString.slice(6,10)}`;
     }
 }
 /*var paciente = new Paciente(new Nombre('felipe','rodriguez','ontiveros'),new Fecha(2,2,2019), 3121775682);
